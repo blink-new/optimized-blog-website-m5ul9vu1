@@ -1,6 +1,7 @@
 import { Calendar, Clock, User } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Badge } from '../ui/badge';
+import { LazyImage } from '../ui/LazyImage';
 import { BlogPost } from '../../types/blog';
 
 interface BlogCardProps {
@@ -16,10 +17,10 @@ export function BlogCard({ post, onClick }: BlogCardProps) {
     >
       <CardHeader className="p-0">
         <div className="relative overflow-hidden rounded-t-lg">
-          <img
+          <LazyImage
             src={post.image}
             alt={post.title}
-            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-48 transition-transform duration-300 group-hover:scale-105"
           />
           {post.featured && (
             <Badge className="absolute top-3 left-3 bg-accent text-accent-foreground">
